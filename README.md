@@ -1,6 +1,6 @@
 # bitbucket2gitlab
 
-At Inbot we recently set up our own Gitlab server and we needed to port our issues over from bitbucket. Since I could find no tool to do this, I hacked together a quick tool that gets the job done.
+At [Inbot](http://inbot.io) we recently set up our own Gitlab server and we needed to port our issues over from bitbucket. Since I could find no tool to do this, I hacked together a quick tool that gets the job done.
 
 
 Instructions:
