@@ -29,7 +29,7 @@ end
 
 def gitlab_key(email,password)
   uri = URI("#{@base_url}/api/v3/session")
-  res = Net::HTTP.post_form(uri, 'email' => 'jilles@inbot.io', 'password' => 'chickenbot4ever')
+  res = Net::HTTP.post_form(uri, 'email' => email, 'password' => password)
   JSON.parse(res.body)['private_token']
 end
 
