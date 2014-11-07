@@ -3,17 +3,7 @@
 require 'json'
 require 'net/http'
 
-# gitlab host
-@host="host"
-@base_url="https://#{@host}/"
-# add your credentials here
-@token=gitlab_key('user','password')
-# note the %2F to separate namespace and project
-@project='inbot%2Ftest_import_issues'
-
-# we use ssl, you should too
-@http = Net::HTTP.new("#{@host}",443)
-@http.use_ssl=true
+# modify global variables at bottom of this file
 
 def load_bitbucket()
   JSON.parse(IO.read('db-1.0.json'))
@@ -76,6 +66,18 @@ def get_issues()
   puts response.inspect
   puts response.body
 end
+
+# gitlab host
+@host="host"
+@base_url="https://#{@host}/"
+# add your credentials here
+@token=gitlab_key('user','password')
+# note the %2F to separate namespace and project
+@project='inbot%2Ftest_import_issues'
+
+# we use ssl, you should too
+@http = Net::HTTP.new("#{@host}",443)
+@http.use_ssl=true
 
 # kick off the import
 import(load_bitbucket())
